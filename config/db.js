@@ -1,12 +1,12 @@
 import mongoose, { mongo } from "mongoose";
 import { cache } from "react";
 
-let cached = global.mongoose
+let cached = global.mongoose;
 
 if (!cached){
     cached=global.mongoose={ conn:null,promise:null
 
-    }
+    };
 }
     async function connectDB(){
         if(cached.conn){
@@ -20,8 +20,8 @@ if (!cached){
                 return mongoose
             })
         }
-        cached.com = await cached.promise
-        return cached.conn
+        cached.com = await cached.promise;
+        return cached.conn;
     }
 
-    export default  connectDB
+    export default  connectDB;
